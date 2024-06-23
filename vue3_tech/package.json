@@ -9,12 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify-json/mdi": "^1.1.67",
+    "@iconify/json": "^2.2.221",
     "axios": "^1.7.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.8.1",
     "@types/node": "^20.14.8",
     "@vitejs/plugin-vue": "^5.0.5",
     "autoprefixer": "^10.4.19",
