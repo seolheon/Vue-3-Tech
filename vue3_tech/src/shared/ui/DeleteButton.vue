@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { defineProps, defineEmits } from 'vue';
+
 const props = defineProps<{
   id: number;
 }>();
@@ -16,4 +18,3 @@ const handleClick = () => {
 
 <style scoped>
 </style>
-  

@@ -17,10 +17,10 @@ export const useCatQuoteStore = defineStore('base',{
             });
         },
         deleteCatQuote(id: number) {
-            let catQuoteToDeleteIndex = this.catQuotes.findIndex(el => el.id === id)
+            let catQuoteToDeleteIndex = this.catQuotes.findIndex(el => el.id === id);
             if (catQuoteToDeleteIndex !== -1) {
-                this.catQuotes.splice(catQuoteToDeleteIndex)
+                this.catQuotes.splice(catQuoteToDeleteIndex, 1); 
             }
-        }
+        } 
     }
 })

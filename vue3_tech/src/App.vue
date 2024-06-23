@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <HomePage />
+    <HomePage class="" />
 </template>
 
 <style scoped>
