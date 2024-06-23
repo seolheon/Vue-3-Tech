@@ -1,10 +1,10 @@
 <script setup lang="ts">
-    import { CatQuoteList } from '../widgets/CatQuotes/CAtQuotesList.vue'
+  import CatQuotesList from '../widgets/CatQuotesList.vue'
 </script>
 
 <template>
-    <div>   
-        <CatQuoteList />
+    <div class="flex">   
+        <CatQuotesList />
     </div>
 </template>
 

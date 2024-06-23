@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import Todolist from './pages/HomePage.vue'
+  import HomePage from './pages/HomePage.vue'
 </script>
 
 <template>
-    <Todolist />
+    <HomePage />
 </template>
 
 <style scoped>

@@ -7,11 +7,20 @@ export const useCatQuoteStore = defineStore('base',{
         catQuotes: <catQuote[]>[]
     }),
     actions: {
-        getCatQuotes(){
-            return catQuotes.fetchCatQuotes().then(({data}) =>{
-                 this.catQuotes = data
-                 console.log('Data', this.catQuotes)
-            })
+        getCatQuotes() {
+            return catQuotes.fetchCatQuotes().then(({ data }) => {
+                this.catQuotes = data.map((quote: string, index: number) => ({
+                    id: index + 1, 
+                    data: quote
+                }));
+                console.log('Data', this.catQuotes);
+            });
+        },
+        deleteCatQuote(id: number) {
+            let catQuoteToDeleteIndex = this.catQuotes.findIndex(el => el.id === id)
+            if (catQuoteToDeleteIndex !== -1) {
+                this.catQuotes.splice(catQuoteToDeleteIndex)
+            }
         }
     }
 })
