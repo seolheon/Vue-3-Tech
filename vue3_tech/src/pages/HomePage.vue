@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import CatQuotesList from '../widgets/CatQuotesList.vue'
+  import  CatQuotesList  from '../widgets/CatQuotesList.vue'
 </script>
 
 <template>
@@ -8,7 +8,7 @@
         <CatQuotesList />
     </div>
     <div class="p-10">
-      fgdbd
+      <div @click="" class="w-20 h-5 bg-white">НАЖМИ</div>
     </div>
   </div>
 </template>
