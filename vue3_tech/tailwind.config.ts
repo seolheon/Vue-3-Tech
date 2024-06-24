@@ -5,13 +5,13 @@ export default {
   content: ['./index.html', './src/**/*.{vue,ts}'],
   theme: {
     colors: {
-      'main-orange': '#EE623F',
+      'light-bg': '#282828',
       'font-color': '#2A2B2E',
       'white': '#FFFFFF',
       'black': '#000000',
-      'light-grey': '#E1E1E1',
+      'dark-bg': '#202020',
       'grey': '#909090',
-      'dark-grey': '#57595B',
+      'accent-main': '#65B397',
       'blue': '#4384F2',
       'light-blue': '#E3F3FF',
       'bot-light-grey': '#FAFBFD',

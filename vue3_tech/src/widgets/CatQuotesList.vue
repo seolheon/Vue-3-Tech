@@ -8,7 +8,7 @@ const allCatQuotes = ref(<catQuote[]>[]);
 const catQuotes = computed(() => allCatQuotes.value);
 
 onMounted(async () => {
-  await catQuoteStore.getCatQuotes();
+  await getCatQuotes();
   allCatQuotes.value = catQuoteStore.catQuotes;
   console.log('OnPage:', allCatQuotes.value);
 });
@@ -16,12 +16,16 @@ onMounted(async () => {
 const deleteCatQuote = (id: number) => {
   catQuoteStore.deleteCatQuote(id);
 };
+
+const getCatQuotes = async () => {
+  await catQuoteStore.getCatQuotes()
+}
 </script>
 
 <template>
   <div>
-    <div v-for="item in catQuotes" :key="item.id">
-      <CatQuoteItem :id="item.id" :onDelete="deleteCatQuote">
+    <div v-for="item in catQuotes" :key="item.id" class="py-1.5">
+      <CatQuoteItem :id="item.id" :onDelete="deleteCatQuote" :onFetchMore="getCatQuotes">
         <p>{{ item.data }}</p>
       </CatQuoteItem>
     </div>

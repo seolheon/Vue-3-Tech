@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps<{
   id: number;
@@ -13,7 +12,7 @@ const handleClick = () => {
 </script>
 
 <template>
-    <button @click="handleClick">Delete</button>
+    <div @click="handleClick" class="rounded-[15px]">Delete</div>
 </template>
 
 <style scoped>
