@@ -1,15 +1,8 @@
 <template>
-    <button @click="handleClick" class="w-20 h-5 bg-white">НАЖМИ</button>
+    <button @click="$emit('reload')" class="rounded-[15px]">Reload</button>
   </template>
   
   <script setup lang="ts">
-  import { defineEmits } from 'vue';
-  
-  const emits = defineEmits(['reload']);
-  
-  const handleClick = () => {
-    emits('reload');
-  };
   </script>
   
   <style scoped>

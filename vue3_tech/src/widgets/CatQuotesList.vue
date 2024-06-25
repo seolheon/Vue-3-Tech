@@ -4,22 +4,26 @@ import { catQuote } from '../shared/types';
 import CatQuoteItem from './CatQuoteItem.vue';
 
 const catQuoteStore = useCatQuoteStore();
-const allCatQuotes = ref(<catQuote[]>[]);
+const allCatQuotes = ref<catQuote[]>([]);
 const catQuotes = computed(() => allCatQuotes.value);
 
-onMounted(async () => {
-  await getCatQuotes();
-  console.log('OnPage:', allCatQuotes.value);
-});
+const getCatQuotes = async () => {
+  await catQuoteStore.getCatQuotes();
+  allCatQuotes.value = catQuoteStore.catQuotes;
+};
+
+defineExpose({
+  getCatQuotes
+  })
 
 const deleteCatQuote = (id: number) => {
   catQuoteStore.deleteCatQuote(id);
 };
 
-const getCatQuotes = async () => {
-  await catQuoteStore.getCatQuotes()
-  allCatQuotes.value = catQuoteStore.catQuotes
-}
+onMounted(async () => {
+  await getCatQuotes();
+  console.log('OnPage:', allCatQuotes.value);
+});
 </script>
 
 <template>
