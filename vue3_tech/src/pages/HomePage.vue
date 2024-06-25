@@ -1,21 +1,28 @@
 <script setup lang="ts">
   import  CatQuotesList  from '../widgets/CatQuotesList.vue'
-  import  ReloadButton  from '../shared/ui/ReloadButton.vue'
+  import  LoadMoreButton  from '../shared/ui/LoadMoreButton.vue'
 
-  const catQuotesList = ref(null)
+  const catQuotesList = ref()
 
-const handleReload = () => {
-  catQuotesList.getCatQuotes();
+const handleLoadMore = () => {
+  catQuotesList.value.getCatQuotes();
 };
 </script>
 
 <template>
   <div class="flex flex-row">
-    <div class="scrollale-section flex flex-col justify-start rounded-r-2xl bg-dark-bg w-[40%] px-4 py-6 overflow-scroll h-[100vh]">   
+    <div class="scrollale-section flex flex-col justify-start rounded-r-2xl bg-dark-bg w-[35vw] px-4 py-6 overflow-scroll h-[100vh]">   
         <CatQuotesList ref="catQuotesList"/>
     </div>
-    <div class="p-10">
-      <ReloadButton @reload="handleReload" class="bg-accent-main p-3"/>
+    <div class="p-10 flex flex-col w-[65vw] h-[100vh]">
+      <div class="flex flex-row">
+        <LoadMoreButton @load-more="handleLoadMore" class="bg-accent-main p-3"/>
+      </div>
+      <div class="flex flex-col h-[100vh] justify-center items-center">
+        <div class="bg-dark-bg rounded-[20px] size-[500px] p-5">
+
+        </div>
+      </div>
     </div>
   </div>
 </template>

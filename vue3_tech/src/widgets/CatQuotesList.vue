@@ -30,7 +30,7 @@ onMounted(async () => {
   <div>
     <div v-for="item in catQuotes" :key="item.id" class="py-1.5">
       <CatQuoteItem :id="item.id" :onDelete="deleteCatQuote">
-        <p>{{ item.data }}</p>
+        <p class="truncate">{{ item.data }}</p>
       </CatQuoteItem>
     </div>
   </div>

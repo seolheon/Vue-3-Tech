@@ -9,10 +9,11 @@ export const useCatQuoteStore = defineStore('base',{
     actions: {
         getCatQuotes() {
             return catQuotes.fetchCatQuotes().then(({ data }) => {
-                this.catQuotes = data.map((quote: string, index: number) => ({
+                const someQuotes = data.map((quote: string, index: number) => ({
                     id: index + 1, 
                     data: quote
                 }));
+                this.catQuotes.push(...someQuotes)
                 console.log('Data', this.catQuotes);
             });
         },

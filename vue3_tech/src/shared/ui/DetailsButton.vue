@@ -4,15 +4,15 @@ const props = defineProps<{
   id: number;
 }>();
 
-const emits = defineEmits(['deleteItem']);
+const emits = defineEmits(['detailsItem']);
 
 const handleClick = () => {
-  emits('deleteItem', props.id);
+  emits('detailsItem', props.id);
 };
 </script>
 
 <template>
-    <div @click="handleClick">Удалить</div>
+    <div @click="handleClick">Фулл</div>
 </template>
 
 <style scoped>
