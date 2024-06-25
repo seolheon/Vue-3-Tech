@@ -29,7 +29,7 @@ onMounted(async () => {
 <template>
   <div>
     <div v-for="item in catQuotes" :key="item.id" class="py-1.5">
-      <CatQuoteItem :id="item.id" :onDelete="deleteCatQuote">
+      <CatQuoteItem @click="$emit('showDetails', item.data)" :id="item.id" :onDelete="deleteCatQuote">
         <p class="truncate">{{ item.data }}</p>
       </CatQuoteItem>
     </div>
