@@ -12,7 +12,7 @@ const handleClick = () => {
 </script>
 
 <template>
-    <div @click="handleClick">Удалить</div>
+    <div @click="handleClick" class="cursor-pointer hover:bg-[#813d3d]">Удалить</div>
 </template>
 
 <style scoped>

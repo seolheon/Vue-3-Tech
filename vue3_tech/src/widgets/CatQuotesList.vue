@@ -13,16 +13,23 @@ const getCatQuotes = async () => {
 };
 
 defineExpose({
-  getCatQuotes
+  getCatQuotes,
+  catQuotes
   })
-
+  
 const deleteCatQuote = (id: number) => {
   catQuoteStore.deleteCatQuote(id);
 };
 
 onMounted(async () => {
-  await getCatQuotes();
-  console.log('OnPage:', allCatQuotes.value);
+  if (catQuoteStore.catQuotes.length == 0) {
+  await getCatQuotes();}
+  else allCatQuotes.value = catQuoteStore.catQuotes;
+  console.log('OnPage:', catQuotes.value);
+});
+
+onUnmounted(() => {
+  allCatQuotes.value = []
 });
 </script>
 
