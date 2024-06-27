@@ -22,7 +22,7 @@ watch(
   () => catQuotesList.value?.catQuotes.length,
   (list) => {
     totalQuotes.value = list
-    console.log('HUINYA', list)
+    console.log('OnCount', list)
   }
 );
 
